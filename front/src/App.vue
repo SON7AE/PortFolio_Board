@@ -1,5 +1,5 @@
 <template>
-    <div>app.vue</div>
+    <RouterView />
 </template>
 
 <script>

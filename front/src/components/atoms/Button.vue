@@ -1,0 +1,71 @@
+<template>
+    <button :data-theme="theme" class="button">{{ label }}</button>
+</template>
+
+<script>
+export default {
+    props: {
+        /**@type {import("vue".PropType<Theme>)} */
+        theme: {
+            type: String,
+            required: false,
+        },
+        label: {
+            type: String,
+            required: false,
+        },
+    },
+};
+</script>
+
+<style lang="scss" scoped>
+@import '~/assets/styles/main.scss';
+
+.button {
+    outline: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 12px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    &[data-theme='text'] {
+        background-color: $color-white-000;
+        color: $color-white-700;
+
+        &:hover {
+            background-color: $color-white-300;
+        }
+    }
+    &[data-theme='filled'] {
+        background-color: $color-orange-100;
+
+        &:hover {
+            border: 1px solid $color-orange-200;
+            background-color: $color-orange-100;
+        }
+    }
+    &[data-theme='secondary'] {
+        border: 1px solid $color-orange-100;
+        background-color: $color-white-000;
+        color: $color-orange-100;
+
+        &:hover {
+            background-color: $color-white-100;
+        }
+    }
+    &[data-theme='ghost'] {
+        background-color: $color-white-300;
+        color: $color-white-600;
+
+        &:hover {
+            background-color: #e7e7e7;
+        }
+    }
+}
+</style>
