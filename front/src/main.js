@@ -5,5 +5,6 @@ import router from './routes/index';
 
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
-createApp(App).use(router).use(ElementPlus).mount('#app');
+createApp(App).use(router).use(ElementPlus).use(ElementPlusIconsVue).mount('#app');
