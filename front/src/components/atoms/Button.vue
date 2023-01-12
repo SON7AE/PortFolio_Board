@@ -28,6 +28,8 @@ export default {
     align-items: center;
     justify-content: center;
 
+    width: 100%;
+
     padding: 6px 12px;
 
     border-radius: 4px;

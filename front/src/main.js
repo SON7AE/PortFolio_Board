@@ -5,6 +5,11 @@ import router from './routes/index';
 
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
+// if you're using CDN, please remove this line.
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
-createApp(App).use(router).use(ElementPlus).use(ElementPlusIconsVue).mount('#app');
+const APP = createApp(App);
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    APP.component(key, component);
+}
+APP.use(router).use(ElementPlus).mount('#app');

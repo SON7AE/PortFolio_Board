@@ -1,14 +1,16 @@
 <template>
     <div class="page">
         <Navigation />
+        <BasicContent />
     </div>
 </template>
 
 <script>
 import Navigation from '~/components/organisms/Navigation.vue';
+import BasicContent from '../components/organisms/basic/Content.vue';
 
 export default {
-    components: { Navigation },
+    components: { Navigation, BasicContent },
 };
 </script>
 

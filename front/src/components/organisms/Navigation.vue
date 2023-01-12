@@ -45,5 +45,9 @@ export default {
     border-width: 0 1px 0 1px;
     border-style: solid;
     border-color: #e6e6e6;
+
+    &__search {
+        background-color: #f2f2f2;
+    }
 }
 </style>
