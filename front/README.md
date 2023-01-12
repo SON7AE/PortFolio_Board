@@ -21,6 +21,7 @@
     -   `npm install axios`
 -   UI 라이브러리 : Element Plus를 활용하여 필요한 부분에서의 UI 구현
     -   `npm install element-plus --save`
+    -   `npm install @element-plus/icons-vue`
 
 ---
 
