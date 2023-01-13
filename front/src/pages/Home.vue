@@ -1,16 +1,18 @@
 <template>
     <div class="page">
         <Navigation />
-        <BasicContent />
+        <!-- <BasicContent /> -->
+        <CreateContent />
     </div>
 </template>
 
 <script>
 import Navigation from '~/components/organisms/Navigation.vue';
-import BasicContent from '../components/organisms/basic/Content.vue';
+import BasicContent from '~/components/organisms/basic/Content.vue';
+import CreateContent from '~/components/organisms/create/Content.vue';
 
 export default {
-    components: { Navigation, BasicContent },
+    components: { Navigation, BasicContent, CreateContent },
 };
 </script>
 

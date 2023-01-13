@@ -23,6 +23,7 @@ export default {
 
 .button {
     outline: none;
+    border: 0;
 
     display: flex;
     align-items: center;
@@ -30,7 +31,7 @@ export default {
 
     width: 100%;
 
-    padding: 6px 12px;
+    padding: 7.5px 12px;
 
     border-radius: 4px;
 
@@ -67,6 +68,7 @@ export default {
 
         &:hover {
             background-color: #e7e7e7;
+            color: $color-white-300;
         }
     }
 }
