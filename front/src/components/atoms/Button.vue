@@ -29,9 +29,7 @@ export default {
     align-items: center;
     justify-content: center;
 
-    width: 100%;
-
-    padding: 7.5px 12px;
+    padding: 9px 12px;
 
     border-radius: 4px;
 
@@ -49,6 +47,8 @@ export default {
         background-color: $color-orange-100;
 
         &:hover {
+            padding: 8px 11px;
+
             border: 1px solid $color-orange-200;
             background-color: $color-orange-100;
         }
@@ -68,7 +68,7 @@ export default {
 
         &:hover {
             background-color: #e7e7e7;
-            color: $color-white-300;
+            color: $color-white-600;
         }
     }
 }

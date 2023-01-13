@@ -25,7 +25,7 @@ export default { components: { Button } };
     align-items: center;
     justify-content: center;
 
-    width: 860px;
+    width: 855px;
     height: 100vh;
 
     border-right: 1px solid #e6e6e6;
