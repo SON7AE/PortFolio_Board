@@ -25,6 +25,9 @@
 
 ---
 
+### 아래 링크를 클릭하시면 개발 진행 상황을 볼 수 있습니다!
+- 링크 : https://glistening-liger-c803ec.netlify.app/#/
+
 ### 주의사항!
 
 -   `npm i -D webpack-dev-server@next`로 설치(webpack-cli 버전(@4^)과 일치)!<br />
