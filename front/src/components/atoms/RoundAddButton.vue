@@ -27,6 +27,8 @@ export default {};
     background: transparent;
 
     position: relative;
+
+    cursor: pointer;
 }
 .row {
     position: absolute;
