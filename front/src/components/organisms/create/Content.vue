@@ -14,7 +14,7 @@
                 <Button :theme="'filled'" label="Add New Board" class="filled-button" />
             </div>
         </div>
-        <div v-if="!isActive" class="content__body">
+        <div v-if="!isActive" :class="{ active: !isActive }" class="content__body">
             <CreateBoard />
         </div>
         <div v-else class="content__body">
@@ -37,11 +37,14 @@ import CreateBoard from '~/components/mocules/create/Board.vue';
 export default {
     components: { CreateDatePicker, Button, RoundAddButton, CreateBoard },
     setup() {
-        const title = ref(''); // 제목
+        // 제목
+        const title = ref('');
 
-        const customColor = ref('#00EA88'); // 프로그레스 바
-        const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`); // 프로그레스 바
+        // 프로그레스 바
+        const customColor = ref('#00EA88');
+        const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`);
 
+        // 버튼 클릭 시 분기처리
         const isActive = ref(false);
         const create = () => {
             isActive.value = !isActive.value;
@@ -117,13 +120,17 @@ export default {
         align-items: center;
         justify-content: center;
 
+        width: calc(100% - 32px);
         height: calc(100vh - 116px);
 
-        padding: 28px;
+        padding: 28px 16px;
         gap: 28px;
 
         background-color: #f9f9f9;
 
+        &.active {
+            justify-content: flex-start;
+        }
         &__text-box {
             display: flex;
             flex-direction: column;
