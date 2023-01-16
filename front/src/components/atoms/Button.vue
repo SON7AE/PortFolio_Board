@@ -9,6 +9,7 @@ export default {
         theme: {
             type: String,
             required: false,
+            default: 'normal',
         },
         label: {
             type: String,
@@ -31,17 +32,14 @@ export default {
 
     padding: 9px 12px;
 
+    color: $color-white-700;
     border-radius: 4px;
+    background: transparent;
 
     cursor: pointer;
 
-    &[data-theme='text'] {
-        background-color: $color-white-000;
-        color: $color-white-700;
-
-        &:hover {
-            background-color: $color-white-300;
-        }
+    &:hover {
+        background-color: $color-white-300;
     }
     &[data-theme='filled'] {
         background-color: $color-orange-100;

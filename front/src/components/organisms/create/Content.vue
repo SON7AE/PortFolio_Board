@@ -14,12 +14,15 @@
                 <Button :theme="'filled'" label="Add New Board" class="filled-button" />
             </div>
         </div>
-        <div class="content__body">
+        <div v-if="!isActive" class="content__body">
+            <CreateBoard />
+        </div>
+        <div v-else class="content__body">
             <div class="content__body__text-box">
                 <span class="content__body__text-box__title">There is no board yet.</span>
                 <span class="content__body__text-box__subTitle">Click the button and start flashing!</span>
             </div>
-            <RoundAddButton />
+            <RoundAddButton @click="create" />
         </div>
     </div>
 </template>
@@ -29,15 +32,22 @@ import { ref } from '@vue/reactivity';
 import CreateDatePicker from '~/components/atoms/create/DatePicker.vue';
 import Button from '~/components/atoms/Button.vue';
 import RoundAddButton from '~/components/atoms/RoundAddButton.vue';
+import CreateBoard from '~/components/mocules/create/Board.vue';
 
 export default {
-    components: { CreateDatePicker, Button, RoundAddButton },
+    components: { CreateDatePicker, Button, RoundAddButton, CreateBoard },
     setup() {
         const title = ref(''); // 제목
+
         const customColor = ref('#00EA88'); // 프로그레스 바
         const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`); // 프로그레스 바
 
-        return { title, format, customColor };
+        const isActive = ref(false);
+        const create = () => {
+            isActive.value = !isActive.value;
+        };
+
+        return { title, format, customColor, isActive, create };
     },
 };
 </script>
@@ -109,6 +119,7 @@ export default {
 
         height: calc(100vh - 116px);
 
+        padding: 28px;
         gap: 28px;
 
         background-color: #f9f9f9;
