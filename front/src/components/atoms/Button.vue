@@ -42,6 +42,7 @@ export default {
         background-color: $color-white-300;
     }
     &[data-theme='filled'] {
+        color: $color-white-000;
         background-color: $color-orange-100;
 
         &:hover {

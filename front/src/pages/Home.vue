@@ -3,6 +3,8 @@
         <Navigation />
         <!-- <BasicContent /> -->
         <CreateContent />
+        <!-- 다이얼로그 -->
+        <Dialog />
     </div>
 </template>
 
@@ -10,9 +12,10 @@
 import Navigation from '~/components/organisms/Navigation.vue';
 import BasicContent from '~/components/organisms/basic/Content.vue';
 import CreateContent from '~/components/organisms/create/Content.vue';
+import Dialog from '../components/organisms/Dialog.vue';
 
 export default {
-    components: { Navigation, BasicContent, CreateContent },
+    components: { Navigation, BasicContent, CreateContent, Dialog },
 };
 </script>
 
@@ -26,5 +29,7 @@ export default {
     width: 1137px;
 
     margin: auto;
+
+    position: relative;
 }
 </style>
