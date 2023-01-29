@@ -15,7 +15,9 @@
                 </div>
             </div>
             <el-divider style="margin: 0" />
-            <div class="dialog__body"></div>
+            <div class="dialog__body">
+                <VMarkdownEditor v-model="content" locale="en" :upload-action="handleUpload" />
+            </div>
             <div class="dialog__footer">
                 <Button label="Cancel" />
                 <Button :theme="'filled'" label="Done" />
@@ -26,17 +28,27 @@
 
 <script>
 import { ref } from '@vue/reactivity';
+import { VMarkdownEditor } from 'vue3-markdown';
+import 'vue3-markdown/dist/style.css';
+
 import Button from '~/components/atoms/Button.vue';
 import CreateCheckBox from '~/components/atoms/create/checkBox.vue';
 import CreateDatePicker from '~/components/atoms/create/DatePicker.vue';
 
 export default {
-    components: { CreateCheckBox, CreateDatePicker, Button },
+    components: { CreateCheckBox, CreateDatePicker, Button, VMarkdownEditor },
     setup() {
         const dialogVisible = ref(true);
+        const content = ref('');
+        const handleUpload = (file) => {
+            console.log(file);
+            return 'https://i.postimg.cc/52qCzTVw/pngwing-com.png';
+        };
 
         return {
             dialogVisible,
+            content,
+            handleUpload,
         };
     },
 };
@@ -126,7 +138,7 @@ export default {
         width: 100%;
         height: 530px;
 
-        background-color: $color-white-500;
+        // background-color: $color-white-500;
     }
     &__footer {
         display: flex;

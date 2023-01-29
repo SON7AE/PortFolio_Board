@@ -1,6 +1,6 @@
 # To do board
 
-###  1. 개요
+### 1. 개요
 
 이 프로젝트는 Create, Read, Update, Delete (이하 CRUD) 기능구현을 목적으로 한 포트폴리오 입니다. <br />
 이 프로젝트를 함께 진행해봄으로써 Git 형상관리, 컴포넌트 구조설계, API 활용, Vue.js에 대한 전반적인 이해 등<br />
@@ -22,11 +22,15 @@
 -   UI 라이브러리 : Element Plus를 활용하여 필요한 부분에서의 UI 구현
     -   `npm install element-plus --save`
     -   `npm install @element-plus/icons-vue`
+-   MarkDown 마크다운 : Vue3-markdown 라이브러리 사용
+    -   `npm install vue3-markdown`
+    -   `https://www.npmjs.com/package/vue3-markdown`
 
 ---
 
 ### 아래 링크를 클릭하시면 개발 진행 상황을 볼 수 있습니다!
-- 링크 : https://glistening-liger-c803ec.netlify.app/#/
+
+-   링크 : https://glistening-liger-c803ec.netlify.app/#/
 
 ### 주의사항!
 
