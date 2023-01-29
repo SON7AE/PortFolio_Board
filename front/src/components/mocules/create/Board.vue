@@ -18,7 +18,7 @@
         </div>
         <el-divider />
         <div class="board__footer">
-            <Button label="Add Contents" />
+            <Button label="Add Contents" @click="sendEvent" />
         </div>
     </div>
 </template>
@@ -30,11 +30,15 @@ import Button from '~/components/atoms/Button.vue';
 
 export default {
     components: { CreateCheckBox, CreateDatePicker, Button },
-    setup() {
+    setup(props, context) {
         const title = '';
+        const sendEvent = () => {
+            context.emit('openDialog', true);
+        };
 
         return {
             title,
+            sendEvent,
         };
     },
 };

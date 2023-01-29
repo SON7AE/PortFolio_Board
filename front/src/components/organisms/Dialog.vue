@@ -5,7 +5,7 @@
                 <div class="dialog__header__title-box">
                     <CreateCheckBox />
                     <span class="title">Development Environment Setting</span>
-                    <button class="button">
+                    <button class="button" @click="close">
                         <i class="fa-solid fa-circle-xmark fa-2xl"></i>
                     </button>
                 </div>
@@ -19,7 +19,7 @@
                 <VMarkdownEditor v-model="content" locale="en" :upload-action="handleUpload" />
             </div>
             <div class="dialog__footer">
-                <Button label="Cancel" />
+                <Button label="Cancel" @click="close" />
                 <Button :theme="'filled'" label="Done" />
             </div>
         </div>
@@ -37,18 +37,23 @@ import CreateDatePicker from '~/components/atoms/create/DatePicker.vue';
 
 export default {
     components: { CreateCheckBox, CreateDatePicker, Button, VMarkdownEditor },
-    setup() {
-        const dialogVisible = ref(true);
+    setup(props, context) {
+        // 다이얼로그 Vue3 마크다운
         const content = ref('');
         const handleUpload = (file) => {
             console.log(file);
             return 'https://i.postimg.cc/52qCzTVw/pngwing-com.png';
         };
 
+        // 다이얼로그 닫기
+        const close = () => {
+            context.emit('closeDialog', false);
+        };
+
         return {
-            dialogVisible,
             content,
             handleUpload,
+            close,
         };
     },
 };

@@ -15,7 +15,7 @@
             </div>
         </div>
         <div v-if="!isActive" :class="{ active: !isActive }" class="content__body">
-            <CreateBoard />
+            <CreateBoard @openDialog="sendEvent" />
         </div>
         <div v-else class="content__body">
             <div class="content__body__text-box">
@@ -36,7 +36,7 @@ import CreateBoard from '~/components/mocules/create/Board.vue';
 
 export default {
     components: { CreateDatePicker, Button, RoundAddButton, CreateBoard },
-    setup() {
+    setup(props, context) {
         // 제목
         const title = ref('');
 
@@ -50,7 +50,12 @@ export default {
             isActive.value = !isActive.value;
         };
 
-        return { title, format, customColor, isActive, create };
+        // 디이얼로그 열기
+        const sendEvent = (value) => {
+            context.emit('openDialog', value);
+        };
+
+        return { title, format, customColor, isActive, create, sendEvent };
     },
 };
 </script>
