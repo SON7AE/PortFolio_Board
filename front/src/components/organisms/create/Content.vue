@@ -28,36 +28,36 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import CreateDatePicker from '~/components/atoms/create/DatePicker.vue';
-import Button from '~/components/atoms/Button.vue';
-import RoundAddButton from '~/components/atoms/RoundAddButton.vue';
-import CreateBoard from '~/components/mocules/create/Board.vue';
+import { ref } from '@vue/reactivity'
+import CreateDatePicker from '~/components/atoms/create/DatePicker.vue'
+import Button from '~/components/atoms/Button.vue'
+import RoundAddButton from '~/components/atoms/RoundAddButton.vue'
+import CreateBoard from '~/components/mocules/create/Board.vue'
 
 export default {
     components: { CreateDatePicker, Button, RoundAddButton, CreateBoard },
     setup(props, context) {
         // 제목
-        const title = ref('');
+        const title = ref('')
 
         // 프로그레스 바
-        const customColor = ref('#00EA88');
-        const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`);
+        const customColor = ref('#00EA88')
+        const format = (percentage) => (percentage === 100 ? 'Full' : `${percentage}%`)
 
         // 버튼 클릭 시 분기처리
-        const isActive = ref(false);
+        const isActive = ref(false)
         const create = () => {
-            isActive.value = !isActive.value;
-        };
+            isActive.value = !isActive.value
+        }
 
         // 디이얼로그 열기
         const sendEvent = (value) => {
-            context.emit('openDialog', value);
-        };
+            context.emit('openDialog', value)
+        }
 
-        return { title, format, customColor, isActive, create, sendEvent };
+        return { title, format, customColor, isActive, create, sendEvent }
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -16,7 +16,7 @@ export default {
             required: false,
         },
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>

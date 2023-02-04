@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
+import { ref } from '@vue/reactivity'
 
 export default {
     props: {
@@ -16,10 +16,10 @@ export default {
         },
     },
     setup() {
-        const date = ref('');
-        return { date };
+        const date = ref('')
+        return { date }
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import Button from '~/components/atoms/Button.vue';
+import Button from '~/components/atoms/Button.vue'
 
-export default { components: { Button } };
+export default { components: { Button } }
 </script>
 
 <style lang="scss" scoped>

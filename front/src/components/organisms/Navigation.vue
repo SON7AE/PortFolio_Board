@@ -12,21 +12,21 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import Button from '~/components/atoms/Button.vue';
+import { ref } from '@vue/reactivity'
+import Button from '~/components/atoms/Button.vue'
 
 export default {
     components: {
         Button,
     },
     setup() {
-        const searchText = ref('');
+        const searchText = ref('')
 
         return {
             searchText,
-        };
+        }
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>

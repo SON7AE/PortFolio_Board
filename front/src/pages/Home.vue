@@ -10,28 +10,29 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import Navigation from '~/components/organisms/Navigation.vue';
-import BasicContent from '~/components/organisms/basic/Content.vue';
-import CreateContent from '~/components/organisms/create/Content.vue';
-import Dialog from '../components/organisms/Dialog.vue';
+import { ref } from '@vue/reactivity'
+
+import Navigation from '~/components/organisms/Navigation.vue'
+import BasicContent from '~/components/organisms/basic/Content.vue'
+import CreateContent from '~/components/organisms/create/Content.vue'
+import Dialog from '../components/organisms/Dialog.vue'
 
 export default {
     components: { Navigation, BasicContent, CreateContent, Dialog },
     setup() {
-        const dialogVisible = ref(false);
+        const dialogVisible = ref(false)
         // 다이얼로그 열기
         const openDialog = (value) => {
-            dialogVisible.value = value;
-        };
+            dialogVisible.value = value
+        }
         // 다이얼로그 닫기
         const closeDialog = (value) => {
-            dialogVisible.value = value;
-        };
+            dialogVisible.value = value
+        }
 
-        return { dialogVisible, openDialog, closeDialog };
+        return { dialogVisible, openDialog, closeDialog }
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>

@@ -27,36 +27,36 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
-import { VMarkdownEditor } from 'vue3-markdown';
-import 'vue3-markdown/dist/style.css';
+import { ref } from '@vue/reactivity'
+import { VMarkdownEditor } from 'vue3-markdown'
+import 'vue3-markdown/dist/style.css'
 
-import Button from '~/components/atoms/Button.vue';
-import CreateCheckBox from '~/components/atoms/create/checkBox.vue';
-import CreateDatePicker from '~/components/atoms/create/DatePicker.vue';
+import Button from '~/components/atoms/Button.vue'
+import CreateCheckBox from '~/components/atoms/create/checkBox.vue'
+import CreateDatePicker from '~/components/atoms/create/DatePicker.vue'
 
 export default {
     components: { CreateCheckBox, CreateDatePicker, Button, VMarkdownEditor },
     setup(props, context) {
         // 다이얼로그 Vue3 마크다운
-        const content = ref('');
+        const content = ref('')
         const handleUpload = (file) => {
-            console.log(file);
-            return 'https://i.postimg.cc/52qCzTVw/pngwing-com.png';
-        };
+            console.log(file)
+            return 'https://i.postimg.cc/52qCzTVw/pngwing-com.png'
+        }
 
         // 다이얼로그 닫기
         const close = () => {
-            context.emit('closeDialog', false);
-        };
+            context.emit('closeDialog', false)
+        }
 
         return {
             content,
             handleUpload,
             close,
-        };
+        }
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>

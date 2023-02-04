@@ -24,24 +24,24 @@
 </template>
 
 <script>
-import CreateCheckBox from '~/components/atoms/create/checkBox.vue';
-import CreateDatePicker from '~/components/atoms/create/DatePicker.vue';
-import Button from '~/components/atoms/Button.vue';
+import CreateCheckBox from '~/components/atoms/create/checkBox.vue'
+import CreateDatePicker from '~/components/atoms/create/DatePicker.vue'
+import Button from '~/components/atoms/Button.vue'
 
 export default {
     components: { CreateCheckBox, CreateDatePicker, Button },
     setup(props, context) {
-        const title = '';
+        const title = ''
         const sendEvent = () => {
-            context.emit('openDialog', true);
-        };
+            context.emit('openDialog', true)
+        }
 
         return {
             title,
             sendEvent,
-        };
+        }
     },
-};
+}
 </script>
 
 <style lang="scss" scoped>
